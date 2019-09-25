@@ -136,7 +136,6 @@ public abstract strictfp class S2EdgeIndex {
       indices[i] = i;
     }
     Arrays.sort(indices, new Comparator<Integer>() {
-      @Override
       public int compare(Integer index1, Integer index2) {
         return S2EdgeIndex.compare(cells[index1], edges[index1], cells[index2], edges[index2]);
       }

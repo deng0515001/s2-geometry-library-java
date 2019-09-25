@@ -386,7 +386,6 @@ public strictfp class S2EdgeUtil {
      * if the region to the left of A contains the region to the left of B, and
      * 0 otherwise.
      */
-    @Override
     public int test(S2Point a0, S2Point ab1, S2Point a2, S2Point b0, S2Point b2) {
       // For A to contain B (where each loop interior is defined to be its left
       // side), the CCW edge order around ab1 must be a2 b2 b0 a0. We split
@@ -404,7 +403,6 @@ public strictfp class S2EdgeUtil {
      * example, if A,B,C are distinct points ordered CCW around a vertex O, then
      * the wedges BOA, AOC, and COB do not intersect.
      */
-    @Override
     public int test(S2Point a0, S2Point ab1, S2Point a2, S2Point b0, S2Point b2) {
       // For A not to intersect B (where each loop interior is defined to be
       // its left side), the CCW edge order around ab1 must be a0 b2 b0 a2.
@@ -421,7 +419,6 @@ public strictfp class S2EdgeUtil {
      * if A contains B, 0 if A and B are disjoint, and -1 if A intersects but
      * does not contain B.
      */
-    @Override
     public int test(S2Point a0, S2Point ab1, S2Point a2, S2Point b0, S2Point b2) {
       // This is similar to WedgeContainsOrCrosses, except that we want to
       // distinguish cases (1) [A contains B], (3) [A and B are disjoint],
@@ -451,7 +448,6 @@ public strictfp class S2EdgeUtil {
      * the maximum possible result is returned. For example, if A == B then the
      * result is +1.
      */
-    @Override
     public int test(S2Point a0, S2Point ab1, S2Point a2, S2Point b0, S2Point b2) {
       // There are 6 possible edge orderings at a shared vertex (all
       // of these orderings are circular, i.e. abcd == bcda):

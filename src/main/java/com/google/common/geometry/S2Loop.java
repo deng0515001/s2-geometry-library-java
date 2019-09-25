@@ -199,7 +199,6 @@ public final strictfp class S2Loop implements S2Region, Comparable<S2Loop> {
   /**
    * Comparator (needed by Comparable interface)
    */
-  @Override
   public int compareTo(S2Loop other) {
     if (numVertices() != other.numVertices()) {
       return this.numVertices() - other.numVertices();
@@ -569,14 +568,12 @@ public final strictfp class S2Loop implements S2Region, Comparable<S2Loop> {
   // S2Region interface (see {@code S2Region} for details):
 
   /** Return a bounding spherical cap. */
-  @Override
   public S2Cap getCapBound() {
     return bound.getCapBound();
   }
 
 
   /** Return a bounding latitude-longitude rectangle. */
-  @Override
   public S2LatLngRect getRectBound() {
     return bound;
   }
@@ -586,7 +583,6 @@ public final strictfp class S2Loop implements S2Region, Comparable<S2Loop> {
    * Otherwise, either the region does not contain the cell or the containment
    * relationship could not be determined.
    */
-  @Override
   public boolean contains(S2Cell cell) {
     // It is faster to construct a bounding rectangle for an S2Cell than for
     // a general polygon. A future optimization could also take advantage of
@@ -605,7 +601,6 @@ public final strictfp class S2Loop implements S2Region, Comparable<S2Loop> {
    * Otherwise, either region intersects the cell, or the intersection
    * relationship could not be determined.
    */
-  @Override
   public boolean mayIntersect(S2Cell cell) {
     // It is faster to construct a bounding rectangle for an S2Cell than for
     // a general polygon. A future optimization could also take advantage of

@@ -93,7 +93,6 @@ public strictfp class S2CellUnion implements S2Region, Iterable<S2CellId> {
   }
 
   /** Enable iteration over the union's cells. */
-  @Override
   public Iterator<S2CellId> iterator() {
     return cellIds.iterator();
   }
@@ -209,7 +208,6 @@ public strictfp class S2CellUnion implements S2Region, Iterable<S2CellId> {
   }
 
   /** This is a fast operation (logarithmic in the size of the cell union). */
-  @Override
   public boolean contains(S2Cell cell) {
     return contains(cell.id());
   }
@@ -412,7 +410,6 @@ public strictfp class S2CellUnion implements S2Region, Iterable<S2CellId> {
     return copy;
   }
 
-  @Override
   public S2Cap getCapBound() {
     // Compute the approximate centroid of the region. This won't produce the
     // bounding cap of minimal area, but it should be close enough.
@@ -441,7 +438,6 @@ public strictfp class S2CellUnion implements S2Region, Iterable<S2CellId> {
     return cap;
   }
 
-  @Override
   public S2LatLngRect getRectBound() {
     S2LatLngRect bound = S2LatLngRect.empty();
     for (S2CellId id : this) {
@@ -452,7 +448,6 @@ public strictfp class S2CellUnion implements S2Region, Iterable<S2CellId> {
 
 
   /** This is a fast operation (logarithmic in the size of the cell union). */
-  @Override
   public boolean mayIntersect(S2Cell cell) {
     return intersects(cell.id());
   }

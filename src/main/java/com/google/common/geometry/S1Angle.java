@@ -130,7 +130,6 @@ public final strictfp class S1Angle implements Comparable<S1Angle> {
     return degrees() + "d";
   }
 
-  @Override
   public int compareTo(S1Angle that) {
     return this.radians < that.radians ? -1 : this.radians > that.radians ? 1 : 0;
   }

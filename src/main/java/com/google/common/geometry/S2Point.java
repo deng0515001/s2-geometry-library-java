@@ -169,7 +169,6 @@ public strictfp class S2Point implements Comparable<S2Point> {
   }
 
   // Required for Comparable
-  @Override
   public int compareTo(S2Point other) {
     return (lessThan(other) ? -1 : (equals(other) ? 0 : 1));
   }

@@ -585,7 +585,6 @@ public strictfp class S2LatLngRect implements S2Region {
     return new S2LatLngRect(this.lo(), this.hi());
   }
 
-  @Override
   public S2Cap getCapBound() {
     // We consider two possible bounding caps, one whose axis passes
     // through the center of the lat-long rectangle and one whose axis
@@ -627,12 +626,10 @@ public strictfp class S2LatLngRect implements S2Region {
     return poleCap;
   }
 
-  @Override
   public S2LatLngRect getRectBound() {
     return this;
   }
 
-  @Override
   public boolean contains(S2Cell cell) {
     // A latitude-longitude rectangle contains a cell if and only if it contains
     // the cell's bounding rectangle. (This is an exact test.)
@@ -646,7 +643,6 @@ public strictfp class S2LatLngRect implements S2Region {
    * intersect the region then it is subdivided, and the accuracy of this method
    * goes up as the cells get smaller.
    */
-  @Override
   public boolean mayIntersect(S2Cell cell) {
     // This test is cheap but is NOT exact (see s2latlngrect.h).
     return intersects(cell.getRectBound());

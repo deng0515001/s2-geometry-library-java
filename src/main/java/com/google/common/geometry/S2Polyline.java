@@ -142,14 +142,12 @@ public final strictfp class S2Polyline implements S2Region {
   // S2Region interface (see {@code S2Region} for details):
 
   /** Return a bounding spherical cap. */
-  @Override
   public S2Cap getCapBound() {
     return getRectBound().getCapBound();
   }
 
 
   /** Return a bounding latitude-longitude rectangle. */
-  @Override
   public S2LatLngRect getRectBound() {
     S2EdgeUtil.RectBounder bounder = new S2EdgeUtil.RectBounder();
     for (int i = 0; i < numVertices(); ++i) {
@@ -163,7 +161,6 @@ public final strictfp class S2Polyline implements S2Region {
    * Otherwise, either the region does not contain the cell or the containment
    * relationship could not be determined.
    */
-  @Override
   public boolean contains(S2Cell cell) {
     throw new UnsupportedOperationException(
         "'containment' is not numerically well-defined " + "except at the polyline vertices");
@@ -174,7 +171,6 @@ public final strictfp class S2Polyline implements S2Region {
    * Otherwise, either region intersects the cell, or the intersection
    * relationship could not be determined.
    */
-  @Override
   public boolean mayIntersect(S2Cell cell) {
     if (numVertices() == 0) {
       return false;
